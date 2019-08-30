@@ -13,38 +13,61 @@
         <!--View Controller-->
         <scene sceneID="RiL-xM-8bv">
             <objects>
-                <viewController id="IHF-ju-Sw8" sceneMemberID="viewController">
+                <viewController id="IHF-ju-Sw8" customClass="ViewController" customModule="Food_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uvd-DK-TyD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meal name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6oT-vc-nkq">
-                                <rect key="frame" x="16" y="91" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5C-U4-mal">
-                                <rect key="frame" x="16" y="62" width="87" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qD2-74-rne">
-                                <rect key="frame" x="16" y="129" width="162" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Set Default Label Name"/>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Nor-Ma-dzl">
+                                <rect key="frame" x="16" y="40" width="343" height="96.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5C-U4-mal">
+                                        <rect key="frame" x="0.0" y="0.0" width="86.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meal name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6oT-vc-nkq">
+                                        <rect key="frame" x="0.0" y="28.5" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <action selector="nameTestField:" destination="Fra-TK-Fh5" eventType="editingDidEnd" id="GCd-nX-8Rr"/>
+                                            <action selector="nameTextFeild:" destination="Fra-TK-Fh5" eventType="editingDidEnd" id="sal-cV-whK"/>
+                                            <action selector="nameTextField:" destination="Fra-TK-Fh5" eventType="editingDidEnd" id="IyP-ej-Vvn"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qD2-74-rne">
+                                        <rect key="frame" x="0.0" y="66.5" width="162" height="30"/>
+                                        <state key="normal" title="Set Default Label Name"/>
+                                        <connections>
+                                            <action selector="setDefaultLabelText:" destination="IHF-ju-Sw8" eventType="touchUpInside" id="yHF-6p-gLp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="6oT-vc-nkq" secondAttribute="trailing" id="EYc-zB-rU3"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Nor-Ma-dzl" firstAttribute="top" secondItem="HOI-fK-6uW" secondAttribute="top" constant="20" id="bsC-WF-m65"/>
+                            <constraint firstItem="HOI-fK-6uW" firstAttribute="trailing" secondItem="Nor-Ma-dzl" secondAttribute="trailing" constant="16" id="kxL-oz-1Ul"/>
+                            <constraint firstItem="Nor-Ma-dzl" firstAttribute="leading" secondItem="HOI-fK-6uW" secondAttribute="leading" constant="16" id="sND-oh-40N"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="HOI-fK-6uW"/>
                     </view>
+                    <connections>
+                        <outlet property="mealNameLabel" destination="v5C-U4-mal" id="ie0-VT-16V"/>
+                        <outlet property="nameTextFeild" destination="6oT-vc-nkq" id="Zh9-3R-bor"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jkb-ds-KAj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Fra-TK-Fh5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-351.19999999999999" y="167.76611694152925"/>
+            <point key="canvasLocation" x="-33" y="153"/>
         </scene>
     </scenes>
 </document>
